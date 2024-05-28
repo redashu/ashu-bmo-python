@@ -1,0 +1,12 @@
+name: ci workflow for python app test
+on:
+  push:
+    branches:
+      - "master"
+# creating jobs 
+jobs:
+  ashu-python-app-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking python version on platform 
+        run: python -V 
