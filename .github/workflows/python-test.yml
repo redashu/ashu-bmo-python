@@ -6,7 +6,10 @@ on:
 # creating jobs 
 jobs:
   ashu-python-app-test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest,windows-latest,macos-latest]
     steps:
-      - name: checking python version on platform 
+      - name: checking python version on platform ${{ matrix.os }}
         run: python -V 
